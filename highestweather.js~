@@ -1,0 +1,17 @@
+var MongoClient = require('mongodb').MongoClient;
+
+MongoClient.connect('mongodb://localhost:27017/weather', funcion(err,d){
+if(err) throw err;
+var query = {{'WInd Direction':{$gt:180,$lt:360} }};
+
+db.collection('data').findOne(query, function(err,doc){
+if(err) throw err;
+console.dir(doc);
+db.close();
+
+}
+)
+
+}
+)
+
